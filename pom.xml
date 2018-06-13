@@ -14,6 +14,7 @@
     <modules>
         <module>eureka-server</module>
         <module>userserver1</module>
+        <module>consumer1</module>
     </modules>
 
     <parent>
