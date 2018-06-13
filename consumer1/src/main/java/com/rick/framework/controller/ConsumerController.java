@@ -11,6 +11,7 @@
 package com.rick.framework.controller;
 
 import com.rick.framework.model.SysUser;
+import com.rick.framework.service.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -38,6 +39,13 @@ public class ConsumerController {
     RestTemplate restTemplate;
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+    @Autowired
+    private ConsumerService consumerService;
+
+    @RequestMapping(value="/helloService", method=RequestMethod.GET)
+    public String helloServie(){
+        return consumerService.helloService();
+    }
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)
     public String helloConsume(){
