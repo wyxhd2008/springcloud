@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -52,4 +54,33 @@ public class Hello {
         sysUser.setUserPassword(name);
         return  sysUser;
     }
+
+    @RequestMapping(value="helloById/{id}",method = RequestMethod.GET)
+    public SysUser helloByName1(@PathVariable Long id){
+        SysUser sysUser=new SysUser();
+        sysUser.setId(id);
+        sysUser.setUserName("rick");
+        sysUser.setUserEmail(id.toString() + "@qq.com");
+        sysUser.setCreateTime(new Date());
+        sysUser.setUserPassword(id.toString());
+        System.out.println(sysUser);
+        return  sysUser;
+    }
+
+    @RequestMapping(value="users/{ids}",method = RequestMethod.GET)
+    public List<SysUser> users(String ids){
+        String[] listId=ids.split(",");
+        List<SysUser> sysUserList=new ArrayList<SysUser>();
+        for (String id:listId) {
+            SysUser sysUser=new SysUser();
+            sysUser.setId(Long.parseLong(id));
+            sysUser.setUserName("rick");
+            sysUser.setUserEmail(id.toString() + "@qq.com");
+            sysUser.setCreateTime(new Date());
+            sysUser.setUserPassword(id.toString());
+            sysUserList.add(sysUser);
+        }
+        return sysUserList;
+    }
+
 }

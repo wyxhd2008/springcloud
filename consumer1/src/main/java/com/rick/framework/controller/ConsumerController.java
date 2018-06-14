@@ -23,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
+import java.util.concurrent.Future;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -72,9 +73,21 @@ public class ConsumerController {
         return restTemplate.getForEntity("http://SPRING-CLOUD-SERVER1/helloByName1/name={1}",SysUser.class,name).getBody();
     }
 
+    @RequestMapping(value="/getByUserId/{id}", method=RequestMethod.GET)
+    public void getByUserId(@PathVariable Long id){
+        consumerService.getByUserIdAsync(id);
+    }
+
     @RequestMapping(value="/hello1", method=RequestMethod.GET)
     public String helloConsume1(){
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("SPRING-CLOUD-SERVER1");
         return restTemplate.getForEntity("http://SPRING-CLOUD-SERVER1/",String.class).getBody();
     }
+
+    @RequestMapping(value="/findUser/{id}", method=RequestMethod.GET)
+    public SysUser findUser(@PathVariable Long id){
+        return consumerService.find(id);
+    }
+
+
 }
