@@ -23,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 // 使用此规则不可放在 可扫描的路径下, 如果非要放置, 需要加自定义注解
 //@RibbonClient(name = "SPRING-CLOUD-SERVER1", configuration = MyRibbonConfig.class)
 //@ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {ExcudeAnnotation.class})})
+//@ComponentScan(basePackages = {"com.rick.framework","org.springframework.cloud.client.loadbalancer"})
 public class Consumer1Application {
 
     @Bean
