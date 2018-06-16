@@ -14,6 +14,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.HystrixMetricsProperties;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+//import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -23,7 +24,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableHystrix
-@EnableHystrixDashboard
+//@EnableHystrixDashboard
+//@EnableTurbine
 // 使用此规则不可放在 可扫描的路径下, 如果非要放置, 需要加自定义注解
 //@RibbonClient(name = "SPRING-CLOUD-SERVER1", configuration = MyRibbonConfig.class)
 @ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {ExcudeAnnotation.class})})

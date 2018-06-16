@@ -78,6 +78,4 @@ public class ConsumerService {
         return restTemplate.getForObject("http://SPRING-CLOUD-SERVER1/users?ids={1}",List.class,StringUtils.join(ids,","));
     }
 
-
-
 }

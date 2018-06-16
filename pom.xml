@@ -6,7 +6,7 @@
     <groupId>com.rick.framework</groupId>
     <artifactId>springcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>springcloud</name>
     <description>Demo project for Spring Boot</description>
@@ -15,6 +15,9 @@
         <module>eureka-server</module>
         <module>userserver1</module>
         <module>consumer1</module>
+        <module>hystrixdashboard</module>
+        <module>turbine</module>
+        <module>feignconsummer</module>
     </modules>
 
     <parent>
