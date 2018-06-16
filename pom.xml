@@ -18,6 +18,7 @@
         <module>hystrixdashboard</module>
         <module>turbine</module>
         <module>feignconsummer</module>
+        <module>apigateway</module>
     </modules>
 
     <parent>
