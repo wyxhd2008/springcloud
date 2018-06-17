@@ -19,6 +19,8 @@
         <module>turbine</module>
         <module>feignconsummer</module>
         <module>apigateway</module>
+        <module>configserver</module>
+        <module>configclient</module>
     </modules>
 
     <parent>
