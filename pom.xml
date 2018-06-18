@@ -21,6 +21,7 @@
         <module>apigateway</module>
         <module>configserver</module>
         <module>configclient</module>
+        <module>rabbitmqhello</module>
     </modules>
 
     <parent>
