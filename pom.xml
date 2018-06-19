@@ -24,6 +24,9 @@
         <module>rabbitmqhello</module>
         <module>streamhello</module>
         <module>streamconsumer</module>
+        <module>springcloudstreamrabbitmq</module>
+        <module>springcloudstreamrabbitmq</module>
+        <module>rabbitmqsteam</module>
     </modules>
 
     <parent>

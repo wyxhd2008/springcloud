@@ -10,7 +10,7 @@
  */
 package com.rick.framework.controller;
 
-import com.rick.framework.SendToReceiver;
+//import com.rick.framework.SendToReceiver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2018/6/19
  * @since 1.0.0
  */
-@RestController
-public class StreamConsumerController {
+//@RestController
+//public class StreamConsumerController {
 //    @Autowired
 //    private SendToReceiver sendToReceiver;
 
@@ -37,4 +37,4 @@ public class StreamConsumerController {
 //        sendToReceiver.sendToTest();
 //        return "hello";
 //    }
-}
+//}

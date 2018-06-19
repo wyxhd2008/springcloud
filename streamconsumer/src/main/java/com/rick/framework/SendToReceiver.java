@@ -26,13 +26,13 @@ import org.springframework.messaging.handler.annotation.SendTo;
  * @since 1.0.0
  */
 
-@EnableBinding(value = {Processor.class})
-public class SendToReceiver {
-
-    @StreamListener(Processor.INPUT) // 监听input通道
-    @SendTo(Processor.OUTPUT) // 返回处理结果到output通道
-    public Object receiveFromInput(Object payload){
-        System.out.print("test from input");
-        return "From input channel and return -" + payload;
-    }
-}
+//@EnableBinding(value = {Processor.class})
+//public class SendToReceiver {
+//
+//    @StreamListener(Processor.INPUT) // 监听input通道
+//    @SendTo(Processor.OUTPUT) // 返回处理结果到output通道
+//    public Object receiveFromInput(Object payload){
+//        System.out.print("test from input");
+//        return "From input channel and return -" + payload;
+//    }
+//}
