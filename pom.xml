@@ -22,6 +22,8 @@
         <module>configserver</module>
         <module>configclient</module>
         <module>rabbitmqhello</module>
+        <module>streamhello</module>
+        <module>streamconsumer</module>
     </modules>
 
     <parent>
