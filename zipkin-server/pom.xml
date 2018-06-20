@@ -32,6 +32,8 @@
             <artifactId>zipkin-autoconfigure-ui</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+
     </dependencies>
 
 
