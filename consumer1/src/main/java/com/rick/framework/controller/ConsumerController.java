@@ -12,6 +12,8 @@ package com.rick.framework.controller;
 
 import com.rick.framework.model.SysUser;
 import com.rick.framework.service.ConsumerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -43,10 +45,16 @@ public class ConsumerController {
     private LoadBalancerClient loadBalancerClient;
     @Autowired
     private ConsumerService consumerService;
-
+    private final static Logger LOGGER = LoggerFactory.getLogger(ConsumerController.class);
     @RequestMapping(value="/helloService", method=RequestMethod.GET)
     public String helloServie(){
         return consumerService.helloService();
+    }
+
+    @RequestMapping(value="/trace-1", method=RequestMethod.GET)
+    public String trace(){
+        LOGGER.info("===call trace-1===");
+        return restTemplate.getForEntity("http://SPRING-CLOUD-SERVER1/trace-2",String.class).getBody();
     }
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)

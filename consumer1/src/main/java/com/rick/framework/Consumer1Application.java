@@ -19,11 +19,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.web.client.RestTemplate;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableHystrix
+@EnableSwagger2
 //@EnableHystrixDashboard
 //@EnableTurbine
 // 使用此规则不可放在 可扫描的路径下, 如果非要放置, 需要加自定义注解
