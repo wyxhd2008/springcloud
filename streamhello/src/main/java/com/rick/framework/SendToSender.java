@@ -32,20 +32,19 @@ import java.util.Date;
  * @create 2018/6/19
  * @since 1.0.0
  */
-//@EnableBinding(value = {Processor.class})
-//public class SendToSender {
-//
-//    @Bean
-//    @InboundChannelAdapter(value = Processor.OUTPUT, poller = @Poller(fixedDelay = "10000", maxMessagesPerPoll = "1"))
-//    public MessageSource<String> sendToTest() {
-//        System.out.println("test!!!!!!");
-//        return () -> new GenericMessage<>("hello");
-//    }
-//
-//    @StreamListener(Processor.INPUT) // 监听input通道
-//    public void receiveFromInput(String message) {
-//        System.out.println("send to binder:" + message);
-//    }
-//
-//
-//}
+@EnableBinding(value = {Processor.class})
+public class SendToSender {
+
+    @Bean
+    @InboundChannelAdapter(value = Processor.OUTPUT, poller = @Poller(fixedDelay = "3000", maxMessagesPerPoll = "1"))
+    public MessageSource<String> sendToTest() {
+        System.out.println("test!!!!!!");
+        return () -> new GenericMessage<>("hello");
+    }
+
+    @StreamListener(Processor.INPUT) // 监听input通道
+    public void receiveFromInput(String message) {
+        System.out.println("send to binder:" + message);
+    }
+
+}

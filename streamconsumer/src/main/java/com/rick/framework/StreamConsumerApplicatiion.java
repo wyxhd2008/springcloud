@@ -16,7 +16,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 
@@ -29,20 +31,25 @@ import org.springframework.messaging.support.MessageBuilder;
  * @since 1.0.0
  */
 @SpringBootApplication
-@EnableBinding(Source.class)
-public class StreamConsumerApplicatiion implements CommandLineRunner {
+//@EnableBinding(Sink.class)
+public class StreamConsumerApplicatiion {
 
     public static void main(String[] args) {
         SpringApplication.run(StreamConsumerApplicatiion.class, args);
     }
 
-    @Autowired
-    @Qualifier("output")
-    MessageChannel output;
-    @Override
-    public void run(String... args) throws Exception {
-        // 字符串类型发送MQ
-        System.out.println("字符串信息发送");
-        output.send(MessageBuilder.withPayload("大家好").build());
-    }
+//    @ServiceActivator(inputChannel = Sink.INPUT)
+//    public void originalReceiver(Object payload) {
+//        System.out.println("get message:" + payload.toString());
+//    }
+
+//    @Autowired
+//    @Qualifier("output")
+//    MessageChannel output;
+//    @Override
+//    public void run(String... args) throws Exception {
+//        // 字符串类型发送MQ
+//        System.out.println("字符串信息发送");
+//        output.send(MessageBuilder.withPayload("大家好").build());
+//    }
 }
