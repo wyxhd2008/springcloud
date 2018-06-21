@@ -25,6 +25,10 @@
         <module>streamhello</module>
         <module>streamconsumer</module>
         <module>zipkin-server</module>
+        <module>actuator</module>
+        <module>configserver2</module>
+        <module>configclient2</module>
+        <module>configclient3</module>
     </modules>
 
     <parent>
@@ -43,7 +47,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RC2</version>
+                <version>Finchley.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

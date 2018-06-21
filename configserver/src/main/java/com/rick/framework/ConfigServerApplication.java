@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 //import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @EnableConfigServer
-@Configuration
-@EnableAutoConfiguration
+//@Configuration
+//@EnableAutoConfiguration
 public class ConfigServerApplication {
 
     public static void main(String[] args) {

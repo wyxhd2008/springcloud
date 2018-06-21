@@ -40,13 +40,8 @@ public class Consumer1Application {
         return new RestTemplate();
     }
 
-
-
     public static void main(String[] args) {
         SpringApplication.run(Consumer1Application.class, args);
     }
-
-
-
 
 }

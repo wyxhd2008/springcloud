@@ -1,0 +1,8 @@
+spring:
+    cloud:
+        config:
+            label: master
+            uri: http://localhost:8889
+            name: config-client-dev,default
+
+# 需要注意的是，config-client-dev 直接写git上的文件名
