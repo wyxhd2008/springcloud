@@ -27,7 +27,6 @@
         <module>zipkin-server</module>
         <module>actuator</module>
         <module>configserver2</module>
-        <module>configclient2</module>
         <module>configclient3</module>
     </modules>
 
