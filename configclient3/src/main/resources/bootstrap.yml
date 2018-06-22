@@ -10,6 +10,6 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://server2:1113/eureka/,http://server1:1112/eureka/
+      defaultZone: http://admin:admin@server2:1113/eureka/,http://admin:admin@server1:1112/eureka/
 
 # 需要注意的是，config-client-dev 直接写git上的文件名

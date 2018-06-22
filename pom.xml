@@ -28,6 +28,7 @@
         <module>actuator</module>
         <module>configserver2</module>
         <module>configclient3</module>
+        <module>oauth2</module>
     </modules>
 
     <parent>
