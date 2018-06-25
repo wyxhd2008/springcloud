@@ -29,6 +29,8 @@
         <module>configserver2</module>
         <module>configclient3</module>
         <module>oauth2</module>
+        <module>oauth2resource</module>
+        <module>oauth2test</module>
     </modules>
 
     <parent>
