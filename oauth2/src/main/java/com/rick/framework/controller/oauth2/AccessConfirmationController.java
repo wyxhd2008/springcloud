@@ -1,4 +1,4 @@
-//package com.rick.framework.controller.oauth2;
+//package com.rick.framework.com.rick.framework.controller.oauth2;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.oauth2.common.util.OAuth2Utils;

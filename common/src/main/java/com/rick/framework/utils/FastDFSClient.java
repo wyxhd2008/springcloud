@@ -14,11 +14,11 @@ public class FastDFSClient {
 	private StorageServer storageServer= null;
 	private StorageClient1 storageClient= null;
 	
-	public FastDFSClient(String config) throws Exception {
-		if (config.contains("classpath:")) {
-			config = config.replace("classpath:", this.getClass().getResource("/").getPath());
+	public FastDFSClient(String com.rick.framework.config) throws Exception {
+		if (com.rick.framework.config.contains("classpath:")) {
+			com.rick.framework.config = com.rick.framework.config.replace("classpath:", this.getClass().getResource("/").getPath());
 		}
-		ClientGlobal.init(config);
+		ClientGlobal.init(com.rick.framework.config);
 		
 		trackerClient = new TrackerClient();
 		trackerServer = trackerClient.getConnection();

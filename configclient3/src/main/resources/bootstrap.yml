@@ -3,13 +3,13 @@ spring:
         config:
             label: master
 #            uri: http://localhost:8889
-            name: config-client-dev,default
+            name: com.rick.framework.config-client-dev,default
             discovery:
               enabled: true
-              service-id: config-server
+              service-id: com.rick.framework.config-server
 eureka:
   client:
     serviceUrl:
       defaultZone: http://admin:admin@server2:1113/eureka/,http://admin:admin@server1:1112/eureka/
 
-# 需要注意的是，config-client-dev 直接写git上的文件名
+# 需要注意的是，com.rick.framework.config-client-dev 直接写git上的文件名

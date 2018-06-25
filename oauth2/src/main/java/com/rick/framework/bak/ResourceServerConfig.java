@@ -1,10 +1,10 @@
-//package com.rick.framework.config;
+//package com.rick.framework.com.rick.framework.config;
 //
 //import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-//import org.springframework.security.config.http.SessionCreationPolicy;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+//import org.springframework.security.com.rick.framework.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.com.rick.framework.config.http.SessionCreationPolicy;
+//import org.springframework.security.oauth2.com.rick.framework.config.annotation.web.configuration.EnableResourceServer;
+//import org.springframework.security.oauth2.com.rick.framework.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 //
 //import javax.servlet.http.HttpServletResponse;
 //

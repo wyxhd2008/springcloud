@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-com.rick.framework.config-server</artifactId>
         </dependency>
 
         <dependency>

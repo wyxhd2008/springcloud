@@ -1,8 +1,8 @@
 package com.rick.framework;
 
-//import com.rick.framework.config.ExcudeAnnotation;
-//import com.rick.framework.config.MyRibbonConfig;
-//import com.rick.framework.config.ExcudeAnnotation;
+//import com.rick.framework.com.rick.framework.config.ExcudeAnnotation;
+//import com.rick.framework.com.rick.framework.config.MyRibbonConfig;
+//import com.rick.framework.com.rick.framework.config.ExcudeAnnotation;
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import com.rick.framework.config.ExcudeAnnotation;
 import org.springframework.boot.SpringApplication;
