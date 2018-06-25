@@ -15,12 +15,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.RequestEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.client.token.AccessTokenRequest;
+import org.springframework.security.oauth2.client.token.DefaultAccessTokenRequest;
 import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -61,6 +67,24 @@ public class oauth2ClientApplication {
         return details;
     }
 
+//    @Bean
+//    public AccessTokenRequest accessTokenRequest(){
+////        AccessTokenRequest defaultAccessTokenRequest = new DefaultAccessTokenRequest();
+//        AccessTokenRequest defaultAccessTokenRequest = this.restTemplate.getOAuth2ClientContext().getAccessTokenRequest();
+//        User user = (User) ((Authentication)principal).getPrincipal();
+//
+//        accessTokenRequest.set("username", user.getUsername());
+//        accessTokenRequest.set("password", user.getPassword());
+//
+//        //        Map<String, List<String>> headers = new HashMap<String, List<String>>();
+////        List<String> headerList=new ArrayList<String>();
+////        headerList.add("Basic " + oauthInfo.get("public_key"));
+////        headers.put("Authorization", headerList);
+////        defaultAccessTokenRequest.setHeaders(headers);
+////        defaultAccessTokenRequest.setCurrentUri(oauthInfo.get("redirect_uri"));
+//        return defaultAccessTokenRequest;
+//    }
+
     @RequestMapping("/execute")
     public String execute(Principal principal) throws URISyntaxException {
         User user = (User) ((Authentication)principal).getPrincipal();
@@ -69,6 +93,10 @@ public class oauth2ClientApplication {
         AccessTokenRequest accessTokenRequest = this.restTemplate.getOAuth2ClientContext().getAccessTokenRequest();
         accessTokenRequest.set("username", user.getUsername());
         accessTokenRequest.set("password", user.getPassword());
+        System.out.println(" token is:" + restTemplate.getAccessToken().getValue());
+//        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+//        requestFactory.setOutputStreaming(false);
+//        restTemplate.setRequestFactory(requestFactory);
         return restTemplate.exchange(request, String.class).getBody();
     }
 

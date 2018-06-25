@@ -28,11 +28,12 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
  * @since 1.0.0
  */
 @Configuration
-@Order(2)
+//@Order(2)
 public class WebSecurityConfig1 extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests().anyRequest().authenticated().antMatchers("/oauth/token").permitAll();
+//        http.httpBasic();
     }
 
     @Bean

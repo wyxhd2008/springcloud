@@ -30,9 +30,7 @@
         <module>configclient3</module>
         <module>oauth2</module>
         <module>oauth2resource</module>
-        <module>oauth2test</module>
         <module>oauth2-client</module>
-        <module>oauth2-client-server</module>
         <module>oauth2-resource-server</module>
     </modules>
 
