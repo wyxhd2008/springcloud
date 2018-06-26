@@ -53,8 +53,8 @@ public class Oauth2ResourceApp {
     public RemoteTokenServices remoteTokenServices(){
         RemoteTokenServices remoteTokenServices=new RemoteTokenServices();
         remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:3333/oauth/check_token");
-        remoteTokenServices.setClientId("resource1");
-        remoteTokenServices.setClientSecret("secret");
+        remoteTokenServices.setClientId("webapp");
+        remoteTokenServices.setClientSecret("websecret");
         return remoteTokenServices;
     }
 

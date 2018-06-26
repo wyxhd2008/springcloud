@@ -32,6 +32,9 @@
         <module>oauth2resource</module>
         <module>oauth2-client</module>
         <module>oauth2-resource-server</module>
+        <module>h2</module>
+        <module>others</module>
+        <module>ui</module>
     </modules>
 
     <parent>

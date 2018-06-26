@@ -37,9 +37,37 @@ public class AuthorizationServerConfig1 extends AuthorizationServerConfigurerAda
         endpoints.authenticationManager(authenticationManager);
     }
 
+    /**
+     * 四种授权码模式：
+     * password
+     * client_credentials
+     * authorization_code
+     * implicit
+     * @param clients
+     * @throws Exception
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory().withClient("webapp").secret("websecret").authorizedGrantTypes("password").scopes("read,write,trust");
+        clients.inMemory()
+                .withClient("webapp")
+                .secret("websecret")
+                .authorizedGrantTypes("password")
+                .scopes("read,write,trust")
+        .and()
+                .withClient("client_1")
+                .secret("123456")
+                .authorizedGrantTypes("client_credentials", "refresh_token")
+                .scopes("select")
+         .and()
+                .withClient("client_3")
+                .secret("123456")
+                .redirectUris("http://localhost:2223/login")
+                .authorizedGrantTypes("authorization_code")
+                .scopes("select")
+        .and()
+                .withClient("webapp")
+                .scopes("select")
+                .authorizedGrantTypes("implicit");
     }
 
     @Override

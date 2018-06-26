@@ -93,6 +93,7 @@ public class oauth2ClientApplication {
         AccessTokenRequest accessTokenRequest = this.restTemplate.getOAuth2ClientContext().getAccessTokenRequest();
         accessTokenRequest.set("username", user.getUsername());
         accessTokenRequest.set("password", user.getPassword());
+
         System.out.println(" token is:" + restTemplate.getAccessToken().getValue());
 //        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 //        requestFactory.setOutputStreaming(false);

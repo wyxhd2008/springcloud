@@ -32,7 +32,7 @@
 //                .scopes("select")
 //                .authorities("client")
 //                .secret("123456")
-//                .and().withClient("client_2")
+//         .and().withClient("client_2")
 //                .resourceIds(DEMO_RESOURCE_ID)
 //                .authorizedGrantTypes("password", "refresh_token")
 //                .scopes("select")
@@ -46,8 +46,7 @@
 //                .authorizedGrantTypes("authorization_code")
 ////                .authorities("client")
 //                .scopes("select")
-//                .and()
-//                .withClient("webapp")
+//         .and().withClient("webapp")
 //                .scopes("xx")
 //                .authorizedGrantTypes("implicit");
 //    }
